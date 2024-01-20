@@ -9,7 +9,7 @@ EXPORT_FILE_EXTENSION = ".csv"
 if not os.path.exists(EXPORT_DIR):
     os.makedirs(EXPORT_DIR, exist_ok=False)
 
-def get_export_file_path():
+def get_export_file_path() -> str:
     # Get the current date and time
     now = datetime.now()
 
@@ -27,8 +27,10 @@ def export_current_conversation(current_conversation: list[dict]):
 """
 Copied from https://github.com/openai/openai-cookbook/blob/main/examples/How_to_count_tokens_with_tiktoken.ipynb
 """
-def num_tokens_from_messages(messages, model):
+def num_tokens_from_messages(messages: list[dict], model: str) -> int:
     """Return the number of tokens used by a list of messages."""
+    if not messages or len(messages) == 0:
+        return 0
     try:
         encoding = tiktoken.encoding_for_model(model)
     except KeyError:

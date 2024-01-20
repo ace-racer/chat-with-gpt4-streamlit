@@ -43,3 +43,6 @@ if prompt := st.chat_input("What is up?"):
             message_placeholder.markdown(full_response + "▌")
         message_placeholder.markdown(full_response)
     st.session_state.messages.append({"role": "assistant", "content": full_response})
+
+# Use st.markdown with inline HTML styling to change text color
+st.markdown(f"<span style='color:red'>Total tokens used (input+output): {num_tokens_from_messages(st.session_state.messages, OAI_MODEL)}</span>", unsafe_allow_html=True)
