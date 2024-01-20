@@ -30,6 +30,8 @@ Chat with your GPT-4 model using OpenAI API via Streamlit web app using latest O
     - A CSV file is created with the time stamp of the local time when the export button was clicked
     - Export button: ![Export button](./docs/export-conversation.png)
     - Exported content as a CSV file: ![Exported content](./docs/exported-conversation.png)
+- Get total tokens used using the `tiktoken` library
+    - See total tokens used in the current conversation: ![Total tokens](./docs/total-tokens.png)
 
 
 5. Advanced configurations:
