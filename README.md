@@ -1,7 +1,7 @@
 # chat-with-gpt4-streamlit
 Chat with your GPT-4 model using OpenAI API via Streamlit web app using latest OAI and streamlit packages
 
-# Main reference for codes:
+# Main reference for Streamlit related code:
 - https://docs.streamlit.io/knowledge-base/tutorials/build-conversational-apps
 
 ## Starting the app
@@ -22,3 +22,18 @@ Chat with your GPT-4 model using OpenAI API via Streamlit web app using latest O
 - `streamlit run main.py`
 - Navigate to `http://localhost:8501` where streamlit runs by default
 - Sample run of the app: ![App image](./docs/gpt4-streamlit-localhost.png)
+
+4. More features of the chat app:
+
+- Streaming generation of the response - No waiting!
+- Export the current conversation to save on API calls - outputs are written in the project directory inside a folder called `exports`
+    - A CSV file is created with the time stamp of the local time when the export button was clicked
+    - Export button: ![Export button](./docs/export-conversation.png)
+    - Exported content as a CSV file: ![Exported content](./docs/exported-conversation.png)
+
+
+5. Advanced configurations:
+
+- Adjust the name of the OpenAI text generation model used by changing the `OAI_MODEL` parameter in the `configs.py` file
+List of all possible models from OpenAI [here](https://platform.openai.com/docs/models/gpt-4-and-gpt-4-turbo) and [here](https://platform.openai.com/docs/models/gpt-3-5)
+- Adjust the location where the chat exports are saved by changing the `EXPORT_DIR` parameter in the `configs.py` file

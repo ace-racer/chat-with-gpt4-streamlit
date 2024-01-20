@@ -1,10 +1,15 @@
 from openai import OpenAI
 import streamlit as st
-
-# Use a GPT-4 turbo model
-OAI_MODEL = "gpt-4-1106-preview"
+from configs import OAI_MODEL
+from utils import export_current_conversation, num_tokens_from_messages
 
 st.title("Chat with GPT-4 using Streamlit")
+
+# Create a button
+export_button = st.button("Export")
+
+if export_button:
+    export_current_conversation(st.session_state.messages)
 
 client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 
