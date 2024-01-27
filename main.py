@@ -3,7 +3,7 @@ import streamlit as st
 from configs import OAI_MODEL
 from utils import export_current_conversation, num_tokens_from_messages
 
-st.title("Chat with GPT-4 using Streamlit")
+st.title(f"Chat with [{OAI_MODEL}] using Streamlit")
 
 # Create a button
 export_button = st.button("Export")
@@ -45,4 +45,4 @@ if prompt := st.chat_input("What is up?"):
     st.session_state.messages.append({"role": "assistant", "content": full_response})
 
 # Use st.markdown with inline HTML styling to change text color
-st.markdown(f"<span style='color:red'>Total tokens used (input+output): {num_tokens_from_messages(st.session_state.messages, OAI_MODEL)}</span>", unsafe_allow_html=True)
+st.markdown(f"<span style='color:red'>Total tokens used till now in conversation (your input + model's output): {num_tokens_from_messages(st.session_state.messages, OAI_MODEL)}</span>", unsafe_allow_html=True)
