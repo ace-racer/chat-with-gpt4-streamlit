@@ -1,9 +1,10 @@
 from openai import OpenAI
 import streamlit as st
-from configs import OAI_MODEL
+from configs import OAI_MODEL, EXPORT_DIR
 from utils import export_current_conversation, num_tokens_from_messages
 
-st.title(f"Chat with [{OAI_MODEL}] using Streamlit")
+st.title(f"Chat with [{OAI_MODEL}] model using Streamlit")
+st.subheader(f"Conversations will be exported to {EXPORT_DIR}")
 
 # Create a button
 export_button = st.button("Export")
