@@ -23,7 +23,7 @@ NOTE: You need to procure your API key from the OpenAI website by making the req
 
 - Activate the virtual environment: `source .venv/bin/activate` (if not already activated)
 
-- Then, use Makefile command: `make run` or directly start app using `streamlit run main.py`
+- Then, use Makefile command: `make run` or directly start app using `streamlit run chat_with_gpt4_streamlit/main.py`
 - Navigate to `http://localhost:8501` where streamlit runs by default
 - Sample run of the app: ![App image](./docs/gpt4-streamlit-localhost.png)
 
